@@ -1,0 +1,14 @@
+from pytube import YouTube
+from sys import argv
+
+link = argv[1]
+
+yt= YouTube(link)
+
+print('Title of the Video:\n', yt.title)
+
+print('Views:\n', yt.views)
+
+print('Likes:\n', yt.rating)
+yd= yt.streams.get_highest_resolution()
+yd.download('C:\Users\KIIT\Downloads\YT Downloads')
